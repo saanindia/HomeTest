@@ -2,9 +2,8 @@
 
 cd /target
 ls 
-echo "Sankar"
-ecjp "Transfered successfully"
-touch yes.sh
+echo "Transfered successfully"
+touch yes_test.sh
 
 bundle install
 
