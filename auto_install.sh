@@ -1,15 +1,14 @@
-VERSION=VBoxManage -v | sed 's/\(.*\)r\([0-9]*\)/\1/'
-bundle install
-bundle exec veewee vbox define "precise-vbox-$VERSION" "ubuntu-12.04.1-server-i386"
-bundle exec veewee vbox build "precise-vbox-$VERSION"
-bundle exec veewee vbox validate "precise-vbox-$VERSION"
-VBoxManage controlvm "precise-vbox-$VERSION" poweroff
-vagrant package --base 'precise-vbox-4.2.4' --output 'boxes/precise-vbox-4.2.4.box'
-vagrant box add "precise-vbox-$VERSION" "boxes/precise-vbox-$VERSION.box"
-VBoxManage unregistervm precise-vbox-$VERSION --delete
+#!/bin/bash
 
 cd /target
 ls 
 echo "Sankar"
 ecjp "Transfered successfully"
 touch yes.sh
+
+bundle install
+
+bundle exec veewee vbox define 'ubuntu-14' 'ubuntu-14.04.3-server-amd64'
+bundle exec veewee vbox build 'ubuntu-14' --force --auto --nogui
+bundle exec veewee vbox validate 'ubuntu-14'
+bundle exec vagrant basebox export 'ubuntu-14' --force
