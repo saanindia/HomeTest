@@ -8,7 +8,8 @@ vagrant package --base 'precise-vbox-4.2.4' --output 'boxes/precise-vbox-4.2.4.b
 vagrant box add "precise-vbox-$VERSION" "boxes/precise-vbox-$VERSION.box"
 VBoxManage unregistervm precise-vbox-$VERSION --delete
 
-cd /tmp
+cd /target
+ls 
 echo "Sankar"
 ecjp "Transfered successfully"
 touch yes.sh
