@@ -1,7 +1,9 @@
 #!/bin/bash
 
-cd /target
-ls 
+cd /home/AutoVM
+vagrant up
+vagrant ssh
+
 echo "Transfered successfully"
 touch yes_test.sh
 
