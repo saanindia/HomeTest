@@ -1,5 +1,6 @@
 #!/bin/bash
 cd /etc/puppet/modules/mytest/files
+rm -rf *.*
 wget  http://edu.uci.ics/crawler4j/4.1-SNAPSHOT/crawler4j-4.1-SNAPSHOT.jar
 
 cd /home/AutoVM
