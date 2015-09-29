@@ -1,13 +1,18 @@
 #!/bin/bash
+cd /etc/puppet/modules/mytest/files
+wget edu.uci.ics/crawler4j/4.1-SNAPSHOT/crawler4j-4.1-SNAPSHOT.jar
 
 cd /home/AutoVM
 vagrant up
 vagrant ssh -c "sudo service puppet status"
 vagrant ssh -c "sudo puppet agent --test --waitforcert=60"
 
-
 sudo puppet cert sign --all
+
 vagrant ssh -c "sudo puppet agent --test"
+
+vagrant ssh
+
 sudo exit
 
 echo "Work successfully Done"
